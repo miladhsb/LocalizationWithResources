@@ -22,7 +22,7 @@ namespace LocalizationWithResources
 
             builder.Services.Configure<RequestLocalizationOptions>(options =>
             {
-                const string defaultCulture = "fa";//or fa
+                const string defaultCulture = "fa";//or fa-IR
                 var supportedCultures = new[]
                 {
                new CultureInfo("fa-IR"),//or fa
