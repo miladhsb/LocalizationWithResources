@@ -1,0 +1,31 @@
+﻿@model PersonModel
+
+
+<div class="card w-50">
+    <div class="card-body">
+        <form method="post" asp-action="Person" asp-route-culture="en">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="FirstName" class="lable-control"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="LastName" class="lable-control"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary rounded-0 mt-2">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿@inject IOptions<RequestLocalizationOptions> LocalizationOptions
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+
+    var cultureItems = LocalizationOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.Name })
+        .ToList();
+
+    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
+}
+
+<div>
+    <form asp-controller="Home" asp-action="SetCulture" asp-route-returnUrl="@returnUrl" class="form-horizontal">
+        <select class="nav-link text-dark" name="culture" onchange="this.form.submit();"
+                asp-for="@requestCulture.RequestCulture.UICulture.Name"
+                asp-items="cultureItems">
+        </select>
+    </form>
+</div>

@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Controllers\" />
-    <Folder Include="Resources\Models\" />
+    <EmbeddedResource Update="Resources\Generic\GenericRes.en.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
