@@ -2,9 +2,8 @@
 
 add config in program.cs
 
- builder.Services
+            builder.Services
            .AddLocalization(options => options.ResourcesPath = "Resources");
-
             builder.Services
                 .AddControllersWithViews()
                 .AddViewLocalization()
